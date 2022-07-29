@@ -1,0 +1,508 @@
+body,
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+
+
+    overflow-x: hidden;
+}
+
+ul,
+li {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.navbar {
+
+    background: transparent;
+    position: fixed !important;
+    top: 0px;
+    left: 0px;
+
+    z-index: 1;
+
+
+    .navbar-brand {
+        font-size: 25px;
+        font-weight: bold;
+        color: black !important;
+
+        &:hover {
+            color: orange !important;
+        }
+    }
+
+    .navbar-collapse {
+
+        ul {
+            li {
+                .active {
+                    color: orange !important;
+                }
+
+                .nav-link:hover {
+                    color: orange !important;
+                }
+            }
+
+            .dropdown-menu {
+                margin-top: 20px;
+                background-color: #f8f9fa;
+                border: none;
+            }
+        }
+    }
+
+
+}
+
+// start hero
+.hero {
+    background-image: url("../images/banner/banner-bg.jpg");
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+
+    .container {
+        .row {
+            .text {
+                h1 {
+                    font-size: 50px;
+                    font-weight: bold;
+                }
+
+
+                p {
+                    line-height: 30px;
+                    font-size: 18px;
+                    color: dimgrey;
+                }
+
+                button {
+                    font-size: 24px;
+                    font-weight: 400;
+                    color: white;
+                    width: 50px;
+                    height: 50px;
+                    border: none !important;
+                    outline: none !important;
+                    box-shadow: none !important;
+
+                    &:hover,
+                    &:active {
+                        background: rgba(255, 166, 0, 0.747);
+                    }
+                }
+            }
+        }
+
+
+    }
+}
+
+
+//end hero
+//start features
+.features {
+    .container {
+        .row {
+            box-shadow: 0px 0px 15px 0px darkgray;
+
+            .box {
+                border-right: .1px solid rgba(169, 169, 169, 0.925);
+            }
+
+            & .box:last-child {
+                border-right: none;
+            }
+        }
+    }
+}
+
+//end features
+.catigory {
+    .container {
+        .row {
+            .i {
+                .img {
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                    cursor: pointer;
+                    overflow: hidden;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+
+                    &::after {
+                        content: "SNEKER FOR SPORTS";
+                        position: absolute;
+                        top: 0px;
+                        left: 0px;
+                        right: 0px;
+                        bottom: 0px;
+                        background: rgba(0, 0, 0, 0.308);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        color: white;
+                        font-weight: bold;
+
+                        visibility: hidden;
+                        @extend %transition;
+
+                    }
+
+                    &:hover::after {
+                        visibility: visible;
+                    }
+
+                    &:hover img {
+                        @extend %scale;
+                        @extend %transition;
+                    }
+                }
+
+
+            }
+        }
+    }
+}
+
+// start products
+.products {
+
+
+    .product {
+        box-shadow: 0px 0px 20px 0px #f8f9fa;
+
+        .img {
+            overflow: hidden;
+
+            img {
+                &:hover {
+                    @extend %scale;
+                    @extend %transition;
+                }
+            }
+        }
+
+        .dis {
+            .title {
+                font-size: 15px;
+                font-weight: 600;
+            }
+
+            .price {
+                font-weight: bold;
+            }
+
+            .old-price {
+                text-decoration: line-through;
+            }
+
+            .add {
+
+                button {
+                    background: darkgrey;
+                    color: white;
+                    cursor: pointer;
+                    border: none;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
+
+//end products
+// start brand
+.brand {
+    .img {
+        img {
+            opacity: .2;
+
+            cursor: pointer;
+
+            &:hover {
+                opacity: .8;
+            }
+        }
+    }
+}
+
+// end brandd 
+
+.deal {
+    .box {
+
+        .card {
+            .img {
+                overflow: hidden;
+
+                img {
+                    &:hover {
+                        @extend %scale;
+                        @extend %transition;
+                    }
+                }
+            }
+
+            height: 100%;
+            box-shadow: 0px 0px 20px 0px #f8f9fa;
+
+            .card-title {
+                font-size: 14px;
+
+                &:hover {
+                    color: orange
+                }
+            }
+
+            .price {
+                font-weight: bold;
+            }
+
+            .old-price {
+                color: darkgrey;
+                text-decoration: line-through;
+            }
+        }
+
+    }
+
+}
+
+// start cartt //
+.cart {
+    .container {
+        .content {
+            border: 1px solid rgba(169, 169, 169, 0.568);
+
+            .item {
+                box-shadow: 0px 0px 20px 0px #f8f9fa;
+
+                button,
+                span {
+                    padding: 5px;
+                    width: 60px;
+                    border: none;
+                    background: #f8f9fa;
+                    font-weight: bold;
+                    text-align: center;
+                }
+
+                span {
+                    width: 60px;
+                    display: inline-block;
+                }
+
+                .del {
+                    background: red;
+                    color: white;
+                }
+            }
+        }
+
+    }
+
+}
+
+// end cart
+
+
+// start header section
+.header {
+    height: 400px;
+    background-image: url("../images/banner/common-banner.jpg");
+    background-size: cover;
+    background-position: center;
+    color: white;
+    font-weight: bolder;
+    font-size: 30px;
+}
+
+// end header section
+// start deleat
+.deleat {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 70px;
+    background: rgba(0, 128, 0, 0.94);
+    color: white;
+    z-index: 1;
+    text-transform: capitalize;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+// end deleat
+
+
+footer {
+
+    background-color: black;
+    color: white;
+
+    h5 {
+        font-weight: bold;
+    }
+
+    p,
+    a {
+        font-size: 15px;
+        color: rgba(224, 255, 255, 0.629);
+    }
+
+    .img {
+        overflow: hidden;
+        cursor: pointer;
+
+        img {
+            &:hover {
+                @extend %scale;
+                @extend %transition;
+            }
+        }
+    }
+
+    .search {
+        position: relative;
+        border: 1px solid white;
+        height: 60px;
+
+        &:hover {
+            outline: 4px solid rgba(255, 166, 0, 0.774);
+        }
+
+        input {
+            width: 100%;
+            height: 100%;
+            outline: none;
+            border: none;
+            background: black;
+            color: white;
+            padding: 10px;
+        }
+
+        button {
+            background: orange;
+            color: white;
+            position: absolute;
+            top: 10%;
+            right: 10px;
+            height: 80%;
+            border: none;
+            padding: 5px;
+        }
+    }
+}
+
+.scroll {
+    position: fixed;
+    bottom: 40px;
+    right: 30px;
+    width: 40px;
+    height: 40px;
+    background-color: orange;
+    cursor: pointer;
+
+    i {
+        color: white;
+        font-size: 30px;
+    }
+}
+
+#portal {
+    .louding {
+
+
+        width: 100%;
+        height: 100vh;
+        background: orange;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        z-index: 1;
+
+        img {
+            width: 150px;
+            height: 150px;
+            animation: scale 1s linear infinite alternate-reverse;
+            -webkit-animation: scale 1s linear infinite alternate-reverse;
+        }
+    }
+}
+
+// start animation
+
+@keyframes scale {
+    0% {
+        transform: scale(1.3, 1.3);
+        -webkit-transform: scale(1.3, 1.3);
+        -moz-transform: scale(1.3, 1.3);
+        -ms-transform: scale(1.3, 1.3);
+        -o-transform: scale(1.3, 1.3);
+    }
+
+    100% {
+        transform: scale(1, 1);
+        -webkit-transform: scale(1, 1);
+        -moz-transform: scale(1, 1);
+        -ms-transform: scale(1, 1);
+        -o-transform: scale(1, 1);
+    }
+}
+
+%scale {
+    transform: scale(1.1, 1.1);
+    -webkit-transform: scale(1.1, 1.1);
+    -moz-transform: scale(1.1, 1.1);
+    -ms-transform: scale(1.1, 1.1);
+    -o-transform: scale(1.1, 1.1);
+}
+
+%transition {
+    transition: all .5s linear;
+    -webkit-transition: all .5s linear;
+    -moz-transition: all .5s linear;
+    -ms-transition: all .5s linear;
+    -o-transition: all .5s linear;
+}
+
+@media (max-width:767px) {
+    .hero .container .row .img {
+        display: none;
+    }
+
+    .features .container .row .box {
+        border-right: none;
+    }
+
+    .deal .d {
+        display: none;
+    }
+
+    .deal .box {
+        height: auto;
+    }
+
+    .navbar {
+        margin-top: 0px !important;
+    }
+}
