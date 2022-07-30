@@ -23,13 +23,13 @@ function Deal() {
     }, [])
 
 
-    console.log(data)
+
     const state = useSelector((state) => state.Cart)
     const dispatch = useDispatch()
     const adds = (item) => {
         dispatch(add(item))
     }
-    console.log(state)
+
     return (
         <section className="deal">
             <div className="head text-center">

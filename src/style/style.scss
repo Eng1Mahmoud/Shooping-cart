@@ -43,15 +43,38 @@ a {
     }
 
     .navbar-collapse {
-
         ul {
             li {
                 .active {
                     color: orange !important;
                 }
 
-                .nav-link:hover {
-                    color: orange !important;
+                .nav-link {
+
+                    i {
+                        font-size: 35px;
+                        position: relative;
+
+                        .count {
+                            position: absolute;
+                            left: 13px;
+                            top: -1px;
+                            font-size: 28px;
+                            font-weight: bold;
+                            color: orange;
+                        }
+                    }
+
+
+
+                    &:hover {
+                        color: orange !important;
+                    }
+
+                    &:hover .count {
+                        color: black;
+
+                    }
                 }
             }
 

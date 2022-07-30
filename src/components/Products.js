@@ -7,14 +7,12 @@ import { add, show } from '../redux/slices/CartSlice';
 function Products() {
 
     const [data, setdata] = useState([])
-    /*  const [data2, setdata2] = useState([]) */
-    /*  const [show, setShow] = useState("") */
     useEffect(() => {
         axios.get("https://api.escuelajs.co/api/v1/products")
             .then((respons) => {
                 const Data = respons.data;
                 const shoes = Data.filter((e) => {
-                    return e.category.name == "Shoes"
+                    return e.category.name === "Shoes"
                 })
                 const s1 = shoes.slice(0, 12)
                 const newp = s1.map((e) => {
@@ -26,14 +24,11 @@ function Products() {
             .catch((error) => { console.log(error) })
 
     }, [])
-    console.log(data)
     const dispatch = useDispatch()
     const adds = (item) => {
         dispatch(add(item))
         setTimeout(() => { dispatch(show()) }, 1000)
     }
-
-
     return (
         <section className="products">
             <div className="head text-center">

@@ -1,16 +1,18 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom'
 import logo from '../images/fav.png'
+
+import { useSelector } from 'react-redux'
 function Navbar() {
     const [width, setWidth] = useState("container")
     const [margin, setMargin] = useState("mt-4")
     const home = useRef(null)
 
+    const state = useSelector((state) => state.Cart.countElement)
     window.onscroll = () => {
         if (window.scrollY >= 120) {
             setWidth("container-fluid")
             setMargin("margin")
-            console.log("go")
         }
         else {
             setWidth("container")
@@ -58,14 +60,10 @@ function Navbar() {
 
                         <li className="nav-item">
                             <Link className="nav-link" to="/cartsection">
-                                <i className="fa-solid fa-cart-shopping "></i>
+                                <i className="fa-solid fa-cart-shopping "><span className="count">{state}</span></i>
                             </Link>
                         </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/">
-                                <i className="fa-solid fa-magnifying-glass"></i>
-                            </Link>
-                        </li>
+
                     </ul>
 
                 </div>

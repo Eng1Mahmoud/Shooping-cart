@@ -38,8 +38,23 @@ a {
 .navbar .navbar-collapse ul li .active {
   color: orange !important;
 }
+.navbar .navbar-collapse ul li .nav-link i {
+  font-size: 35px;
+  position: relative;
+}
+.navbar .navbar-collapse ul li .nav-link i .count {
+  position: absolute;
+  left: 13px;
+  top: -1px;
+  font-size: 28px;
+  font-weight: bold;
+  color: orange;
+}
 .navbar .navbar-collapse ul li .nav-link:hover {
   color: orange !important;
+}
+.navbar .navbar-collapse ul li .nav-link:hover .count {
+  color: black;
 }
 .navbar .navbar-collapse ul .dropdown-menu {
   margin-top: 20px;
