@@ -218,7 +218,7 @@ a {
   font-size: 30px;
 }
 
-.deleat {
+.alert {
   position: fixed;
   top: 0px;
   left: 0px;
@@ -354,6 +354,7 @@ footer .search button {
   -ms-transition: all 0.5s linear;
   -o-transition: all 0.5s linear;
 }
+
 
 @media (max-width: 767px) {
   .hero .container .row .img {

@@ -1,13 +1,13 @@
 import React from 'react';
 import { useSelector } from 'react-redux'
-function Deleat() {
+function Alert() {
     const state = useSelector((state) => state.Cart.popupMessage)
+    console.log(state)
     return (
-        <div className="deleat px-5 d-flex align-items-center">
-
+        <div className="alert px-5 d-flex align-items-center">
             <h6>{state}</h6>
         </div>
     );
 }
 
-export default Deleat;
+export default Alert;

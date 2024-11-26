@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useSelector } from "react-redux"
 import Navbar from "./components/Navbar";
-import Deleat from "./components/Deleat";
+import Alert from "./components/Alert";
 import Louding from './components/Louding';
 import Home from './components/Home';
 import CartSection from './components/CartSection';
@@ -12,6 +12,7 @@ function App() {
   const [show, setShow] = useState(true)
   const [louding, setLouding] = useState(true)
   const state = useSelector((state) => state.Cart)
+  console.log(state)
   const scroll = () => { window.scrollTo(0, 0) }
   window.onload = () => { setTimeout(() => { setLouding(false) }, 2000) }
   window.addEventListener("scroll", () => {
@@ -30,7 +31,7 @@ function App() {
         <Route exact path="/" element={<Home />}></Route>
         <Route exact path="/cartsection" element={<CartSection />}></Route>
       </Routes>
-      {state.show ? <Deleat /> : null}
+      {state.show ? <Alert /> : null}
       {
         show ?
           <div className="scroll rounded-circle d-flex align-items-center justify-content-center" onClick={() => { scroll() }} >

@@ -16,57 +16,49 @@ let CartSlice = createSlice({
     reducers: {
         add(state, action) {
             state.existElement = false
+            state.show = true
             const exist = state.itemCart.find((e) => {
                 return e.id === action.payload.id
             })
             if (!exist) {
-                state.itemCart.push(action.payload)
+                state.itemCart.push({
+                    ...action.payload,
+                    count: 1
+                })
                 state.countElement += 1
-                state.popupMessage = "sucsess you add item"
-                state.show = true
-
+                state.popupMessage = "Success! Item added to cart"
             }
             else {
                 state.existElement = true
-                state.popupMessage = "this item exist in cart"
-                state.show = true
+                state.popupMessage = "This item already exists in cart"
             }
-
         },
 
-        deleat(state, action) {
-            const exist = state.itemCart.find((e) => {
-                return e.id === action.payload.id
+        Delete(state, action) {
+            state.itemCart = state.itemCart.filter((e) => {
+                return e.id !== action.payload.id
             })
-            const index = state.itemCart.indexOf(exist)
-            console.log(index)
-            state.itemCart.splice(index, 1)
             state.countElement -= 1
-            state.popupMessage = "deleat item from cart"
+            state.popupMessage = "Item removed from cart"
             state.show = true
         },
         incres(state, action) {
-
-            const exist = state.itemCart.find((e) => {
-                return e.id === action.payload.id
-            })
-            const index = state.itemCart.indexOf(exist)
-            state.itemCart[index].q += 1
+            const item = state.itemCart.find((e) => e.id === action.payload.id)
+            if (item) {
+                item.count += 1
+            }
         },
         decres(state, action) {
-
-            const exist = state.itemCart.find((e) => {
-                return e.id === action.payload.id
-            })
-            const index = state.itemCart.indexOf(exist)
-            state.itemCart[index].q -= 1
-            if (state.itemCart[index].q < 1) { state.itemCart[index].q = 1 }
+            const item = state.itemCart.find((e) => e.id === action.payload.id)
+            if (item && item.count > 1) {
+                item.count -= 1
+            }
         },
-        show(state, action) {
+        show(state) {
             state.show = false
         }
 
     }
 })
-export const { add, deleat, incres, decres, show } = CartSlice.actions
+export const { add, Delete, incres, decres, show } = CartSlice.actions
 export default CartSlice.reducer

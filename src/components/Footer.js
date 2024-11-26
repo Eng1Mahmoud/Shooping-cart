@@ -10,23 +10,23 @@ import img8 from "../images/i8.jpg"
 function Footer() {
     return (
         <footer>
-            <div className="container-fluid p-5">
-                <div className="row g-5 row1 py-5">
-                    <div className="col-lg-3 col-md-6 col-sm-">
+            <div className="container-fluid p-3 p-md-5">
+                <div className="row g-4 row1 py-3 py-md-5">
+                    <div className="col-lg-3 col-md-6 col-sm-12">
                         <h5 className="logo pb-2">About Us</h5>
                         <p>Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita</p>
                     </div>
                     <div className="col-lg-3 col-md-6 col-sm-12">
-                        <h5 className="pb-2" >Newsletter</h5>
+                        <h5 className="pb-2">Newsletter</h5>
                         <p>Diam dolor diam ipsum sit. Aliqu diam amet diam et eos.</p>
-                        <div className="search ">
-                            <input type="email"></input>
-                            <button type="submit">SignUp</button>
+                        <div className="search d-flex">
+                            <input type="email" className="form-control" placeholder="Your email"></input>
+                            <button type="submit" className="btn">SignUp</button>
                         </div>
                     </div>
                     <div className="col-lg-3 col-md-6 col-sm-12">
-                        <h5 className="pb-2">Instragram Feed</h5>
-                        <div className='insta row g-2'>
+                        <h5 className="pb-2">Instagram Feed</h5>
+                        <div className='insta row g-2 g-md-3'>
                             <div className='img col-3'>
                                 <img className="img-fluid" src={img1} alt=" insta"></img>
                             </div>
@@ -52,22 +52,19 @@ function Footer() {
                                 <img className="img-fluid" src={img8} alt=" insta"></img>
                             </div>
                         </div>
-
                     </div>
                     <div className="col-lg-3 col-md-6 col-sm-12">
-                        <h5 className="py-3">Follow Us</h5>
+                        <h5 className="py-2 py-md-3">Follow Us</h5>
                         <p>Let us be social</p>
-                        <ul className='d-flex justify-content-start'>
+                        <ul className='d-flex justify-content-start gap-3'>
                             <li><a href="#"><i className="fa-brands fa-facebook-f pe-4"></i> </a></li>
                             <li><a href="#"><i className="fa-brands fa-twitter pe-4"></i></a></li>
                             <li><a href="#"> <i className="fa-brands fa-instagram pe-4"></i></a></li>
                             <li><a href="#"> <i className="fa-brands fa-linkedin-in pe-4"></i></a></li>
-
                         </ul>
-
                     </div>
                 </div>
-                <div className=" row2 pt-3 text-center">
+                <div className="row2 pt-2 pt-md-3 text-center">
                     <div className='Devoloper '>
                         <p className='text-center'> &copy;<strong>Food,</strong> All Right Reserved. Designed By <strong>Mahmoud Mohamed</strong> </p>
                     </div>
